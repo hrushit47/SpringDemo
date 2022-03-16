@@ -40,4 +40,29 @@ public class StudentRepository {
 		student.setPassport(passport);
 		entityManager.persist(student);
 	}
+	
+	public void insertHardcodedStudentAndCourses() {
+		HrushiStudent student=new HrushiStudent("Aditi");
+		HrushiCourse course=new HrushiCourse("Aditi Thakur");
+		
+		entityManager.persist(student);
+		entityManager.persist(course);
+		
+		student.addCourse(course);
+		course.addStudent(student);
+		
+		entityManager.persist(student);
+	}
+	
+	public void insertStudentAndCourses(HrushiStudent student,HrushiCourse course) {
+		//HrushiStudent student=new HrushiStudent("Aditi");
+		//HrushiCourse course=new HrushiCourse("Aditi Thakur");
+		
+		student.addCourse(course);
+		course.addStudent(student);
+		
+		entityManager.persist(student);
+		entityManager.persist(course);
+		
+	}
 }

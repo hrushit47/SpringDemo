@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.NamedQueries;
@@ -25,6 +26,9 @@ public class HrushiCourse {
 	
 	@OneToMany(mappedBy="course")
 	private List<HrushiReviews> reviews=new ArrayList<>();
+	
+	@ManyToMany(mappedBy="hrushi_courses")
+	private List<HrushiStudent> hrushi_students=new ArrayList<>();
 
 	public HrushiCourse() {
 		
@@ -53,6 +57,14 @@ public class HrushiCourse {
 	
 	public void removeReviews(HrushiReviews review) {
 		this.reviews.remove(review);
+	}
+	
+	public List<HrushiStudent> getStudents() {
+		return hrushi_students;
+	}
+
+	public void addStudent(HrushiStudent student) {
+		this.hrushi_students.add(student);
 	}
 
 	public int getId() {

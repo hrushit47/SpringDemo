@@ -24,14 +24,23 @@ public class HibernateJpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		
+		//studentRepository.insertHardcodedStudentAndCourses();
+		
+		//studentRepository.insertStudentAndCourses(new HrushiStudent("Sneha"),new HrushiCourse("Sneha Chavan"));
+		/*HrushiCourse course=courseRepository.findById(101);
+		System.out.println("HrushiCourse 1001 -> {}"+course);
+		*/	
 		//studentRepository.saveStudentWithPassport();
 		
 		//courseRepository.addHardcodedReviewsForCourse();
 		
-		List<HrushiReviews> reviews=new ArrayList<>();
+		/*List<HrushiReviews> reviews=new ArrayList<>();
 		reviews.add(new HrushiReviews("5","Excellent Course"));
 		reviews.add(new HrushiReviews("4","Best Course"));
 		courseRepository.addReviewsForCourse(19, reviews);
+		*/
 	}
 
 }

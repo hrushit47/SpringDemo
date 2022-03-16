@@ -42,4 +42,24 @@ class StudentRepositoryTest {
 		
 	}
 
+	@Test
+	@Transactional
+	public void retrieveStudentAndCourses() {
+		HrushiStudent student=entityManager.find(HrushiStudent.class,201);
+		System.out.println("Student Details ->"+student);
+		System.out.println("Course Details ->"+student.getCourses());
+		
+	}
+
+	@Test
+	@Transactional
+	public void retrieveCourseAndStudent() {
+		HrushiCourse course=entityManager.find(HrushiCourse.class,101);
+		System.out.println("Course Details ->"+course);
+		System.out.println("Students Details ->"+course.getStudents());
+		
+	}
+
+	
+
 }
