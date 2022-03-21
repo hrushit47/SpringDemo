@@ -1,5 +1,6 @@
 package com.hibernatejpa.HibernateJpa;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,10 @@ public class HibernateJpaApplication implements CommandLineRunner {
 	
 	@Autowired
 	private StudentRepository studentRepository;
+	
+	@Autowired
+	private EmployeeRepository employeeRepository;
+
 
 
 	public static void main(String[] args) {
@@ -24,8 +29,15 @@ public class HibernateJpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		
+//		
+//		
+//		employeeRepository.insert(new HrushiPartTimeEmployee("Atharva" ,new BigDecimal("50")));
+//		employeeRepository.insert(new HrushiFullTimeEmployee("Hrushi" ,new BigDecimal("10000")));
+//		
+//		
+//		System.out.println("Full Employees ->" +employeeRepository.retrievePartTimeEmployees());
+//		System.out.println("Part Employees ->" +employeeRepository.retrieveFullTimeEmployees());
+//
 		//studentRepository.insertHardcodedStudentAndCourses();
 		
 		//studentRepository.insertStudentAndCourses(new HrushiStudent("Sneha"),new HrushiCourse("Sneha Chavan"));
