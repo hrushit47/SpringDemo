@@ -1,6 +1,8 @@
 package com.hibernatejpa.HibernateJpa;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -14,7 +16,8 @@ public class HrushiReviews {
 	@Id
 	@GeneratedValue
 	private int id;
-	private String rating;
+	@Enumerated(EnumType.STRING)
+	private ReviewRating rating;
 	private String description;
 	
 	@ManyToOne
@@ -25,19 +28,19 @@ public class HrushiReviews {
 	}
 	
 	
-	public HrushiReviews(String rating, String description) {
+	public HrushiReviews(ReviewRating rating, String description) {
 		super();
 		this.rating = rating;
 		this.description = description;
 	}
 
 
-	public String getRating() {
+	public ReviewRating getRating() {
 		return rating;
 	}
 
 
-	public void setRating(String rating) {
+	public void setRating(ReviewRating rating) {
 		this.rating = rating;
 	}
 

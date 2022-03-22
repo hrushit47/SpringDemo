@@ -35,6 +35,18 @@ class StudentRepositoryTest {
 	
 	@Test
 	@Transactional
+	public void setAddressDetails() {
+		HrushiStudent student=entityManager.find(HrushiStudent.class,204);
+		student.setAddress(new Address("4156","Balaji Lane","Yeola"));
+		entityManager.flush();
+		entityManager.persist(student);
+		System.out.println("Student Details ->"+student);
+		System.out.println("Passport Details ->"+student.getPassport());
+		
+	}
+
+	@Test
+	@Transactional
 	public void retrievePassportAndAssociatedStudent() {
 		HrushiPassport passport=entityManager.find(HrushiPassport.class,304);
 		System.out.println("Passport Details ->"+passport);

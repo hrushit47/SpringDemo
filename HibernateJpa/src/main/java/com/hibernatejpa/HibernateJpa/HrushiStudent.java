@@ -3,6 +3,7 @@ package com.hibernatejpa.HibernateJpa;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,6 +24,9 @@ public class HrushiStudent {
 	private int id;
 	private String name;
 	
+	@Embedded
+	private Address address;
+	
 	@OneToOne(fetch=FetchType.LAZY)
 	private HrushiPassport passport;
 	
@@ -39,6 +43,15 @@ public class HrushiStudent {
 	
 	public HrushiStudent(String name) {
 		this.name=name;
+	}
+	
+	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public String getName() {

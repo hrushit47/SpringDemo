@@ -57,8 +57,8 @@ public class CourseRepository {
 		System.out.println("Finding course_id 101->"+course3.getReviews());
 		
 		//add 2 reviews to it
-		HrushiReviews review1=new HrushiReviews("5","Great Hands-on Stuff");
-		HrushiReviews review2= new HrushiReviews("5","Hats-off");
+		HrushiReviews review1=new HrushiReviews(ReviewRating.FIVE,"Great Hands-on Stuff");
+		HrushiReviews review2= new HrushiReviews(ReviewRating.FIVE,"Hats-off");
 		
 		//setting the relationship
 		course3.addReviews(review1);
